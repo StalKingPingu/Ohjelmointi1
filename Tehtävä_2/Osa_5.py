@@ -6,4 +6,10 @@ naulat = naulat + leiviskät * 20
 luodit = luodit + naulat * 32
 paino = luodit * 13.3
 
-print("Esineiden yhteismassa on: ", paino, " grammaa")
+kilogrammat = paino / 1000
+kilogrammat = round(kilogrammat)
+kilogrammat = kilogrammat * 1000
+paino = paino - kilogrammat
+kilogrammat = kilogrammat / 1000
+
+print("Esineiden yhteismassa on: ", kilogrammat," kilogrammaa ja ", paino, " grammaa")
