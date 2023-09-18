@@ -1,8 +1,8 @@
 lentoasemat = {"Helsinki-Vantaan lentoasema" : "EFHK"}
 
+valinta = "hi"
 
-
-while True:
+while valinta != "3":
     print("Mitä haluat tehdä?")
     print("1. Lisää lentoasema")
     print("2. Etsi lentoasema")
