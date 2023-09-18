@@ -1,4 +1,4 @@
-lentoasemat = {"Helsinki-Vantaan lentoasema" : "EFHK"}
+lentoasemat = {"EFHK" : "Helsinki-Vantaan lentoasema"}
 
 valinta = "hi"
 
@@ -21,9 +21,6 @@ while valinta != "3":
             print(f"Lentoaseman nimi on: {lentoasemat[ICAO]}.")
         else:
             print(f"{ICAO} ei löydy listasta.")
-
-    elif valinta == "3":
-        break
 
     else:
         print("Virheellinen valinta. Valitse 1, 2 tai 3.")
