@@ -1,5 +1,4 @@
 import mysql.connector
-import geopy.distance
 from geopy import distance
 
 yhteys = mysql.connector.connect(
