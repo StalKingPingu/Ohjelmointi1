@@ -50,5 +50,5 @@ autot2 = []
 for i in range(10):
     auto = Auto(f"ABC-{i + 1}", random.randint(100, 200))
     autot2.append(auto)
-k = Kilpailu("Mahtava kilpa", 20000, autot2)
+k = Kilpailu("Suuri romuralli", 8000, autot2)
 k.tunti_kuluu()
