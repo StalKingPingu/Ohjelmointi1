@@ -1,47 +1,54 @@
 import random
 
-autot = ["auto1", "auto2", "auto3", "auto4", "auto5", "auto6", "auto7", "auto8", "auto9", "auto10"]
-
-autot2 = []
 class Auto:
     def __init__(self, rekkari, huippunopeus, nopeus=0, matkakuljettu=0):
         self.rekkari = rekkari
-        self.huippunopeus = huippunopeus
-        self.nopeus = nopeus
-        self.matkakuljettu = matkakuljettu
+        self.huippunopeus = int(huippunopeus)
+        self.nopeus = int(nopeus)
+        self.matkakuljettu = float(matkakuljettu)
 
-    def kiihdytys(self):
-        nopeus = random.randint(-10, 15)
-        self.nopeus = self.nopeus + nopeus
+    def kiihdytys(self, uusi_nopeus):
+        self.nopeus = self.nopeus + uusi_nopeus
         if self.nopeus < 0:
             self.nopeus = 0
         if self.nopeus > self.huippunopeus:
             self.nopeus = self.huippunopeus
 
-    def kulje(self):
-        self.matkakuljettu = self.matkakuljettu + self.nopeus
+    def kulje(self, aika):
+        self.matkakuljettu = self.matkakuljettu + (self.nopeus * aika)
+
 
 class Kilpailu:
+
     def __init__(self, nimi, pituus, kilpailijat):
         self.nimi = nimi
         self.pituus = pituus
-        self.kilpailijat = []
+        self.kilpailijat = kilpailijat
 
     def tunti_kuluu(self):
-        self.kilpailijat
+        tunti = 0
+        while not self.kilpailu_ohi():
+            for auto in autot2:
+                auto.kiihdytys(random.randint(-10, 15))
+                auto.kulje(1)
+            tunti += 1
+            if tunti % 10 == 0:
+                self.tulosta_tilanne()
 
-for i, name in enumerate(autot):
+    def tulosta_tilanne(self):
+        for auto in self.kilpailijat:
+            print(f"{auto.rekkari} {auto.huippunopeus} {auto.nopeus} {auto.matkakuljettu}")
+
+    def kilpailu_ohi(self):
+        for b in self.kilpailijat:
+            if b.matkakuljettu > self.pituus:
+                self.tulosta_tilanne()
+                return True
+        return False
+
+autot2 = []
+for i in range(10):
     auto = Auto(f"ABC-{i + 1}", random.randint(100, 200))
     autot2.append(auto)
-
-while all(auto.matkakuljettu < 10000 for auto in autot2):
-
-    for auto in autot2:
-        auto.kiihdytys()
-        auto.kulje()
-        print(auto.rekkari, auto.matkakuljettu)
-
-print("Tulokset!")
-
-for auto in autot2:
-    print(f"Rekisterikilpi: {auto.rekkari}, Huippunopeus: {auto.huippunopeus}, nopeus lopussa: {auto.nopeus}, kuljettu matka: {auto.matkakuljettu}")
+k = Kilpailu("Mahtava kilpa", 20000, autot2)
+k.tunti_kuluu()
