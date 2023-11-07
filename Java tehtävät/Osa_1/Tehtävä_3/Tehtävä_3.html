@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Matikka</h1>
+    <p id="nimi"></p>
+    <script>
+        'use strict';
+        const numero1 = prompt('Anna ensimmäinen numero:')
+        const num1 = parseInt(numero1)
+
+        const numero2 = prompt('Anna toinen numero:')
+        const num2 = parseInt(numero2)
+
+        const numero3 = prompt('Anna kolmas numero:')
+        const num3 = parseInt(numero3)
+
+        const summa = num1 + num2 + num3
+        const tulo = num1 * num2 * num3
+        const keskimäärä = summa / 3
+        document.querySelector('#nimi').innerHTML = "Summa on: " + summa + ", tulo on: " + tulo + ", ja keskimäärä on: " + keskimäärä;
+    </script>
+</body>
+</html>
