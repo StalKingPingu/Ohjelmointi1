@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="nimi"></p>
+<ul id="list"></ul>
+<script>
+    'use strict';
+    const koirat = []
+    for (let i = 0; i < 6; i++) {
+        const nimi = prompt("Anna koiralle nimi ");
+        koirat.push(nimi)
+    }
+    koirat.sort()
+    koirat.reverse()
+    let list = ""
+    for (let i = 0; i < 6; i++) {
+        list += "<li>" + koirat[i] + "</li>"
+    }
+    document.querySelector('#list').innerHTML = list;
+</script>
+</body>
+</html>

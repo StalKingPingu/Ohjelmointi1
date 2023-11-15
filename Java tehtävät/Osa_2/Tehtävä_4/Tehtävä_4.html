@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<ol id="list"></ol>
+<body>
+    <script>
+        numero = prompt('anna numero, 0 lopettaa')
+        num = parseInt(numero)
+
+        const numerot = []
+
+        while(num != 0){
+            num = prompt('seuraava numero')
+            numerot.push(num)
+        }
+
+        numerot.sort()
+
+        console.log(numerot)
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="nimi"></p>
+<ol id="list"></ol>
+<script>
+    'use strict';
+    const numero1 = prompt('Anna osallistujien määrä')
+    const määrä = parseInt(numero1)
+
+    const osallistujat = []
+    for (let i = 0; i < määrä; i++) {
+        const nimi = prompt("Syötä osallistujan nimi ");
+        osallistujat.push(nimi)
+    }
+
+    osallistujat.sort()
+
+    let list = ""
+    for (let i = 0; i < määrä; i++) {
+        list += "<li>" + osallistujat[i] + "</li>"
+    }
+
+    document.querySelector('#list').innerHTML = list;
+</script>
+</body>
+</html>
